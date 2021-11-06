@@ -20,9 +20,15 @@ const routes = [
   },
   {
     path: '/photo',
-    name: Photo,
+    name: 'Photo',
     component: Photo
+  },
+  {
+    path: '/ThingsToDo',
+    name: 'ThingsToDo',
+    component: ThingsToDo
   }
+
 ]
 
 const router = new VueRouter({
