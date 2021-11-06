@@ -24,7 +24,7 @@ const routes = [
     component: Photo
   },
   {
-    path: '/ThingsToDo',
+    path: '/thingsToDo',
     name: 'ThingsToDo',
     component: ThingsToDo
   }
