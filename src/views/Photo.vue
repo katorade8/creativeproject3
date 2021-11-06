@@ -1,7 +1,8 @@
 <template>
   <div class="img">
-    <img src="image.src">
-    <i>{{image.caption}}</i>
+    <!--<img src="image.src">-->
+    <!--<i>{{image.caption}}</i>-->
+    hello there
   </div>
 </template>
 
