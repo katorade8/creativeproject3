@@ -4,9 +4,10 @@
 
     <h1>Things To Do</h1>
 
+    <p>{{this.$root.$data.currPark.fullName}}</p>
 
-    <p>{{moreInfo()}}</p>
-    <!--<ParkList :parks='parks'/>-->
+    <img class='image' :src='this.$root.$data.currPark.images[0].url'/>
+
 
   </div>
 
@@ -18,20 +19,6 @@
 export default {
   name: 'ThingsToDo',
 
-
-  computed: {
-    moreInfo() {
-      let park;
-      for (let i = 0; i < this.$root.$data.parks.length; ++i) {
-        if (this.$root.$data.parks[i].id === this.$root.$data.currParkCode) {
-          park = this.$root.$data.parks[i]
-        }
-      }
-      return park;
-    },
-  },
-
-  //currPark: moreInfo(),
 
   //Will probably want to change filter to find parkId, could put a global variable in main.js or import a variable from parklist
 
@@ -52,6 +39,12 @@ export default {
   width: 25%;
   height: 40px;
   font-size: 30px;
+}
+
+.image {
+  justify-content: center;
+  width: 60%;
+  border-radius: 50px;
 }
 
 

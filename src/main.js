@@ -7,7 +7,8 @@ Vue.config.productionTip = false;
 let data = {
   parks: [],
   currParkCode: '',
-  pageLoaded: false
+  pageLoaded: false,
+  currPark: null
 }
 
 
