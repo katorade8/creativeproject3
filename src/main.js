@@ -1,15 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 
-let tmp = []
-let url = 'https://developer.nps.gov/api/v1/parks?limit=465&api_key=NbIPOLabrmVaAyIClWYjTbBVpme58IAaB2pNKkHl'
+let tmp = [];
+let url = 'https://developer.nps.gov/api/v1/parks?limit=465&api_key=NbIPOLabrmVaAyIClWYjTbBVpme58IAaB2pNKkHl';
 fetch(url)
     .then(response => {
-      return response.json()
+      return response.json();
 }).then(json => {
       console.log(json)
       
@@ -17,8 +17,10 @@ fetch(url)
         if (json.data[i].designation == "National Park" || json.data[i].designation == "National Park & Preserve" ||
             json.data[i].designation == "National and State Parks" || json.data[i].designation == "National Parks" ||
             json.data[i].designation == "National Park and Preserve") {
-          tmp.push(json.data[i])
+          tmp.push(json.data[i]);
         }
+        if(json.data[i].fullName == "National Park of American Samoa")
+          tmp.push(json.data[i]);
       }
 
 })
