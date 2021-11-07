@@ -1,7 +1,8 @@
 <template>
   <div class="img">
-    <!--<img src="image.src">-->
-    <!--<i>{{image.caption}}</i>-->
+    <div v-for="image in images" :key="image.url">
+      <img :src="image.url"> 
+    </div>
     hello there
   </div>
 </template>
@@ -10,7 +11,10 @@
 //import { defineComponent } from '@vue/composition-api'
 
 export default {
-  name: 'Photo'
+  name: 'Photo',
+  props: {
+    images: Array
+  }
 }
 </script>
 

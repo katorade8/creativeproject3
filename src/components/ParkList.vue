@@ -11,7 +11,7 @@
       <div>
         <img class='image' :src='park.images[0].url'/>
       </div>
-      <div  class='photo-text'>
+      <div class='photo-text'>
          <button @click='changeCode(park.id)'><router-link to="/ThingsToDo">More Info</router-link></button>
          <p>{{park.id}}</p>
       </div>
@@ -24,31 +24,28 @@
 <script>
 
 export default {
-    name: 'ParkList',
-    props: {
-        parks: Array,
-    },
+  name: 'ParkList',
+  props: {
+    parks: Array,
+  },
+  methods: {
+    changeCode(id) {
+      this.$root.$data.currParkCode = id;
 
-    methods: {
-      changeCode(id) {
-
-        this.$root.$data.currParkCode = id
-
-        for (let i = 0; i < this.$root.$data.parks.length; ++i) {
-          if (this.$root.$data.parks[i].id === this.$root.$data.currParkCode) {
-            this.$root.$data.currPark = this.$root.$data.parks[i]
-          }
+      for (let i = 0; i < this.$root.$data.parks.length; ++i) {
+        if (this.$root.$data.parks[i].id === this.$root.$data.currParkCode) {
+          this.$root.$data.currPark = this.$root.$data.parks[i];
+          break;
         }
-
-
       }
     }
+  }
 }
 
 </script>
 
 
-<style scoped>
+<style>
 
 /*body {
   background: lightsteelblue;

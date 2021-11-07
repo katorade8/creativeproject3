@@ -41,11 +41,12 @@ export default {
   font-size: 30px;
 }
 
+/* INHERIT FROM Parklist non-scope style
 .image {
   justify-content: center;
   width: 60%;
   border-radius: 50px;
-}
+}*/
 
 
 
