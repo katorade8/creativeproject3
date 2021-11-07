@@ -11,6 +11,29 @@
   </div>
 </template>
 
+
+<script>
+export default {
+  created: function() {
+    const url = 'https://developer.nps.gov/api/v1/parks?limit=465&api_key=NbIPOLabrmVaAyIClWYjTbBVpme58IAaB2pNKkHl';
+    fetch(url).then(response => {
+      return response.json();
+      }).then(json => {
+        console.log(json);
+        for (let i = 0; i < json.data.length; i++) {
+          if (json.data[i].designation == "National Park" || json.data[i].designation == "National Park & Preserve" ||
+              json.data[i].designation == "National and State Parks" || json.data[i].designation == "National Parks" ||
+              json.data[i].designation == "National Park and Preserve") {
+            this.$root.$data.parks.push(json.data[i]);
+          }
+          if(json.data[i].fullName == "National Park of American Samoa")
+            this.$root.$data.parks.push(json.data[i]);
+        }
+    }).finally(() => this.$root.$data.isLoaded = true)
+  },
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

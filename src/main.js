@@ -7,11 +7,9 @@ Vue.config.productionTip = false;
 let data = {
   parks: [],
   currParkCode: '',
-  pageLoaded: false,
+  isLoaded: false,
   currPark: null
 }
-
-
 
 new Vue({
   router,
