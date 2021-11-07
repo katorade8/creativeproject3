@@ -14,7 +14,9 @@ fetch(url)
       console.log(json)
       
       for (let i = 0; i < json.data.length; i++) {
-        if (json.data[i].designation == "National Park") {
+        if (json.data[i].designation == "National Park" || json.data[i].designation == "National Park & Preserve" ||
+            json.data[i].designation == "National and State Parks" || json.data[i].designation == "National Parks" ||
+            json.data[i].designation == "National Park and Preserve") {
           tmp.push(json.data[i])
         }
       }
