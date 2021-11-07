@@ -12,7 +12,6 @@
       </div>
       <div class='photo-text'>
         <button @click='changePark(park.id)'><router-link to="/ThingsToDo">More Info</router-link></button>
-        <p>{{park.id}}</p>
       </div>
     </div>
   </div>
