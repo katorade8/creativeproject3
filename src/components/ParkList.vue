@@ -49,7 +49,7 @@ export default {
 .image {
   justify-content: center;
   width: 60%;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .photo-text {

@@ -2,10 +2,12 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
       <router-link to="/photo">Photos</router-link>
     </div>
     <router-view/>
+    <div class="footer"> 
+      <a href="https://github.com/katorade8/creativeproject3">github</a>
+    </div>
   </div>
 </template>
 
@@ -22,7 +24,8 @@
   padding: 30px;
 }
 
-#nav a {
+#nav a,
+.footer a {
   font-weight: bold;
   color: #2c3e50;
 }
