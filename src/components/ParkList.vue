@@ -1,28 +1,3 @@
-<!--
-<template>
-<body>
-<div class="wrapper">
-  <div class="products">
-    <div class="product" v-for="park in parks" :key="park.id">
-      <div class="info">
-        <div>
-        <h1>{{park.fullName}}</h1>
-        <p>{{park.states}}</p>
-      </div>
-      <<div class="image">
-      <div>
-        <img :src='park.images[0].url'/>
-
-      </div>
-      <div>
-        <router-link to="/ThingsToDo">Activities</router-link>  
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-</template>
--->
 
 <template>
 <body>
@@ -31,14 +6,13 @@
     <div v-for="park in parks" :key="park.id">
         <div>
         <h1>{{park.fullName}}</h1>
-        <p>{{park.states}}</p>
+        <h3>{{park.states}}</h3>
       </div>
       <div>
         <img class='image' :src='park.images[0].url'/>
-
       </div>
-      <div>
-        <router-link to="/ThingsToDo">Activities</router-link>  
+      <div  class='photo-text'>
+         <router-link to="/ThingsToDo">Activities</router-link>
       </div>
     </div>
   </div>
@@ -66,7 +40,12 @@ body {
 
 .image {
   justify-content: center;
-  width: 50%;
+  width: 60%;
+  border-radius: 50px;
+}
+
+.photo-text {
+  margin-bottom: 200px;
 }
 
 
