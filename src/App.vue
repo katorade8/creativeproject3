@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <h2>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/photo">Photos</router-link> |
-        <router-link to="/ThingsToDo">Activities</router-link>
-      </h2> 
+    <div id="content-wrap">
+      <div id="nav">
+        <h2>
+          <router-link to="/">Home</router-link> |
+          <router-link to="/photo">Photos</router-link> |
+          <router-link to="/ThingsToDo">Activities</router-link>
+        </h2> 
+      </div>
+      <router-view/>
     </div>
-    <router-view/>
     <div class="footer"> 
-      <a href="https://github.com/katorade8/creativeproject3">github</a>
+      <h2><a href="https://github.com/katorade8/creativeproject3">github</a></h2>
     </div>
   </div>
 </template>
@@ -41,12 +43,19 @@ export default {
 * {
   padding: 0px;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  position: relative;
+  min-height: 96vh; 
+}
+
+#content-wrap {
+  margin-bottom: 2.5rem;
 }
 
 #nav a,
@@ -72,6 +81,13 @@ export default {
   width: 50%;
   height: 40px;
   font-size: 30px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  height: 2.5rem;
 }
 
 @media only screen and (min-width: 600px) {

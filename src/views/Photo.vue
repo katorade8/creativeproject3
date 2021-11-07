@@ -6,6 +6,7 @@
     <p>Viewing photos for</p>
     <h1>{{this.$root.$data.currPark.fullName}}</h1>
     <PhotoList :images="images"/>
+    <br>
   </div>
 </template>
 

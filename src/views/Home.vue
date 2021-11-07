@@ -8,6 +8,7 @@
     </div>
     <div v-if="this.$root.$data.isLoaded">
       <ParkList :parks='parks'/>
+      <br>
     </div>
     <div v-else>
       <p>Loading park list...</p>
