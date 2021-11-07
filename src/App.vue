@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/photo">Photos</router-link>
+      <h2>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/photo">Photos</router-link> |
+        <router-link to="/ThingsToDo">Activities</router-link>
+      </h2> 
     </div>
     <router-view/>
     <div class="footer"> 
@@ -35,6 +38,9 @@ export default {
 </script>
 
 <style>
+* {
+  padding: 0px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,18 +49,16 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
 #nav a,
 .footer a {
-  font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
+  text-decoration: none;
   color: #42b983;
+  font-weight: 900;
 }
 
 .image {
