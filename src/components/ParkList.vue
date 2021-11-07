@@ -11,7 +11,9 @@
         <img class='image' :src='park.images[0].url'/>
       </div>
       <div class='photo-text'>
-        <button @click='changePark(park.id)'><router-link to="/ThingsToDo">More Info</router-link></button>
+        
+        <button @click="changePark(park.id); goToActivites()">Activities</button>
+
       </div>
     </div>
   </div>
@@ -37,6 +39,9 @@ export default {
           break;
         }
       }
+    },
+    goToActivites() { //whole button is now a link :)
+      this.$router.push('/ThingsToDo');
     }
   }
 }
@@ -47,12 +52,5 @@ export default {
 <style>
 .photo-text {
   margin-bottom: 50px;
-}
-
-.image {
-  justify-content: center;
-  width: 60%;
-  border-radius: 10px;
-  margin-bottom: 10px;
 }
 </style>
