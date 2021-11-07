@@ -1,32 +1,23 @@
 <template>
-
-  <div>
-
+  <div v-if="this.$root.$data.currPark != null">
     <h1>More Info</h1>
-
     <h2>{{this.$root.$data.currPark.fullName}}</h2>
-
     <img class='image' :src='this.$root.$data.currPark.images[1].url'/>
-
     <p>Entrance Fee: {{this.$root.$data.currPark.entranceFees[0].cost}}</p>
     <p>Description: {{this.$root.$data.currPark.entranceFees[0].description}}</p>
-
     <br/>
-
     <h1>Activities</h1>
     <div>
-    <div class='activity-container'>
-      <span class='activity' v-for='activity in this.$root.$data.currPark.activities' :key='activity.id'>{{activity.name + " / "}}</span>
-    </div>
+      <div class='activity-container'>
+        <span class='activity' v-for='activity in this.$root.$data.currPark.activities' :key='activity.id'>{{activity.name + " / "}}</span>
+      </div>
     <br>
     </div>
-
     <br/>
-
-
-
   </div>
-
+  <div v-else>
+    <h4>Please select a park to see more info!</h4>
+  </div>
 </template>
 
 <script>
@@ -34,12 +25,7 @@
 
 export default {
   name: 'ThingsToDo',
-
   activities: '',
-
-
-  //Will probably want to change filter to find parkId, could put a global variable in main.js or import a variable from parklist
-
   methods: {
     listActivities() {
       for (let i = 0; i < 10; ++i) {

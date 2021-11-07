@@ -1,6 +1,6 @@
 <template>
   <div class="img" v-if="this.$root.$data.currPark == null">
-    <p>Please select a park to see related photos!</p>
+    <h4>Please select a park to see related photos!</h4>
   </div>
   <div v-else>
     <p>Viewing photos for</p>

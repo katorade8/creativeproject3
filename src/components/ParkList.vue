@@ -1,4 +1,3 @@
-
 <template>
 <body>
 <div>
@@ -11,9 +10,11 @@
         <img class='image' :src='park.images[0].url'/>
       </div>
       <div class='photo-text'>
-        
-        <button @click="changePark(park.id); goToActivites()">
+        <button @click="changePark(park.id); goToPage('/ThingsToDo')">
           <h4>Activities in {{park.fullName}}</h4>
+        </button>
+        <button @click="changePark(park.id); goToPage('/photo')">
+          <h4>Photos of {{park.fullName}}</h4>
         </button>
       </div>
     </div>
@@ -41,8 +42,8 @@ export default {
         }
       }
     },
-    goToActivites() { //whole button is now a link :)
-      this.$router.push('/ThingsToDo');
+    goToPage(path) { //whole button is now a link :)
+      this.$router.push(path);
     }
   }
 }
@@ -58,5 +59,8 @@ export default {
 button {
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px
 }
 </style>

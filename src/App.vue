@@ -51,7 +51,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   position: relative;
-  min-height: 96vh; 
+  min-height: 93vh; 
 }
 
 #content-wrap {
@@ -74,7 +74,6 @@ export default {
   justify-content: center;
   width: 90%;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
 .form {
