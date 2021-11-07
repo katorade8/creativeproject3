@@ -46,10 +46,5 @@ export default {
   justify-content: center;
   width: 100%
 }
-
-.form {
-  width: 25%;
-  height: 40px;
-  font-size: 30px;
-}
+/* form in global style in App.vue for media query purposes */
 </style>

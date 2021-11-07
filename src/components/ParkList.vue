@@ -49,11 +49,4 @@ export default {
 .photo-text {
   margin-bottom: 50px;
 }
-
-.image {
-  justify-content: center;
-  width: 60%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
 </style>

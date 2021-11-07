@@ -56,4 +56,44 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.image {
+  justify-content: center;
+  width: 90%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.form {
+  width: 50%;
+  height: 40px;
+  font-size: 30px;
+}
+
+@media only screen and (min-width: 600px) {
+  .image {
+    width: 70%;
+  }
+  .form {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .image {
+    width: 60%;
+  }
+  .form {
+    width: 27%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .image {
+    width: 900px;
+  }
+  .form {
+    width: 400px;
+  }
+}
 </style>
