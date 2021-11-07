@@ -1,16 +1,17 @@
 <template>
 
   <div>
-
     <div>
       <form>
         <input class='form' type='text' v-model="searchText" />
       </form>
-
     </div>
-
-
-    <ParkList :parks='parks'/>
+    <div v-if="this.$root.$data.isLoaded">
+      <ParkList :parks='parks'/>
+    </div>
+    <div v-else>
+      <p>Loading park list...</p>
+    </div>
 
   </div>
 
@@ -24,26 +25,23 @@ export default {
   components: {
     ParkList,
   },
-
   data() {
     return {
-      searchText: '',
+      searchText: ''
     }
   },
-
   computed: {
     parks() {
       return this.$root.$data.parks.filter(park => park.fullName.toLowerCase().search(this.searchText.toLowerCase()) >= 0);
     }
-  }
+  },
+  watch: {
 
+  }
 }
 </script>
 
-
-
 <style scoped>
-
 .form-container {
   justify-content: center;
   width: 100%
@@ -54,9 +52,4 @@ export default {
   height: 40px;
   font-size: 30px;
 }
-
-
-
-
-
 </style>

@@ -1,30 +1,26 @@
 <template>
-  <div class="img">
-    <!--<img src="image.src">-->
-    <!--<i>{{image.caption}}</i>-->
-    hello there
+  <div class="img" v-if="this.$root.$data.currPark == null">
+    <p>Please select a park to see related photos!</p>
+  </div>
+  <div v-else>
+    <p>Viewing photos for</p>
+    <h1>{{this.$root.$data.currPark.fullName}}</h1>
+    <PhotoList :images="images"/>
   </div>
 </template>
 
 <script>
-//import { defineComponent } from '@vue/composition-api'
+import PhotoList from "../components/PhotoList.vue"
 
 export default {
-  name: 'Photo'
+  name: 'Photo',
+  components: {
+    PhotoList
+  },
+  computed: {
+    images() {
+      return this.$root.$data.images;
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-.img {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-}
-
-img {
-  margin: 20px;
-}
-
-</style>
