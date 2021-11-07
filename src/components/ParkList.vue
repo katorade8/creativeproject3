@@ -5,8 +5,7 @@
   <div>
     <div v-for="park in parks" :key="park.id">
       <div>
-        <h1>{{park.fullName}}</h1>
-        <h3>{{park.states}}</h3>
+        <h1>{{park.fullName}}, {{park.states}}</h1>
       </div>
       <div>
         <img class='image' :src='park.images[0].url'/>
@@ -48,7 +47,7 @@ export default {
 
 <style>
 .photo-text {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .image {
