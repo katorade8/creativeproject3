@@ -5,6 +5,7 @@
     <h1>Things To Do</h1>
 
 
+    <p>{{moreInfo()}}</p>
     <!--<ParkList :parks='parks'/>-->
 
   </div>
@@ -29,6 +30,8 @@ export default {
       return park;
     },
   },
+
+  //currPark: moreInfo(),
 
   //Will probably want to change filter to find parkId, could put a global variable in main.js or import a variable from parklist
 
