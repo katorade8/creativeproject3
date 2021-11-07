@@ -1,28 +1,49 @@
+<!--
 <template>
+<body>
 <div class="wrapper">
   <div class="products">
     <div class="product" v-for="park in parks" :key="park.id">
       <div class="info">
+        <div>
         <h1>{{park.fullName}}</h1>
         <p>{{park.states}}</p>
       </div>
-      <div class="image">
-        <!--<img :src="'/images/products/'+product.image">-->
+      <<div class="image">
+      <div>
         <img :src='park.images[0].url'/>
 
       </div>
-      <!--
-      <div class="price">
-        <h2>{{product.price}}</h2>
-
-
-        <button class="auto" @click='addToCart(product)'>Add to Cart</button>
-  
+      <div>
+        <router-link to="/ThingsToDo">Activities</router-link>  
       </div>
-      -->
     </div>
   </div>
 </div>
+</body>
+</template>
+-->
+
+<template>
+<body>
+<div>
+  <div>
+    <div v-for="park in parks" :key="park.id">
+        <div>
+        <h1>{{park.fullName}}</h1>
+        <p>{{park.states}}</p>
+      </div>
+      <div>
+        <img class='image' :src='park.images[0].url'/>
+
+      </div>
+      <div>
+        <router-link to="/ThingsToDo">Activities</router-link>  
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </template>
 
 <script>
@@ -38,6 +59,32 @@ export default {
 
 
 <style scoped>
+
+body {
+  background: lightsteelblue;
+}
+
+.image {
+  justify-content: center;
+  width: 50%;
+}
+
+
+</style>
+
+
+
+
+
+
+
+<!--
+<style scoped>
+
+body {
+  background: lightsteelblue;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -71,7 +118,7 @@ export default {
 }
 
 .info {
-  background: #F2921D;
+  background: #1d44f2;
   color: #000;
   padding: 10px 30px;
   height: 80px;
@@ -106,3 +153,4 @@ button {
   margin-left: auto;
 }
 </style>
+-->

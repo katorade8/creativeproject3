@@ -19,7 +19,7 @@ const routes = [
     component: Photo
   },
   {
-    path: '/thingsToDo',
+    path: '/ThingsToDo',
     name: 'ThingsToDo',
     component: ThingsToDo
   },
