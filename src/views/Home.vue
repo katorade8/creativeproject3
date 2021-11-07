@@ -2,11 +2,13 @@
 
   <div>
 
-    <div class="search">
-      <form class="pure-form">
-        <input type='text' v-model="searchText" />
+    <div>
+      <form>
+        <input class='form' type='text' v-model="searchText" />
       </form>
+
     </div>
+
 
     <ParkList :parks='parks'/>
 
@@ -41,35 +43,20 @@ export default {
 
 
 <style scoped>
-.wrapper {
-  display: flex;
-  align-items: center;
+
+.form-container {
   justify-content: center;
+  width: 100%
 }
 
-.search {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 50%;
-}
-
-form {
-  display: table;
-  width: 100%;
-}
-
-i {
-  display: table-cell;
-  padding-left: 10px;
-  width: 1px;
-}
-
-input {
-  display: table-cell;
-  font-size: 20px;
-  border: none !important;
-  box-shadow: none !important;
-  width: 100%;
+.form {
+  width: 25%;
   height: 40px;
+  font-size: 30px;
 }
+
+
+
+
+
 </style>
