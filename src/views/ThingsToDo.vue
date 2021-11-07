@@ -47,9 +47,4 @@ export default {
   width: 60%;
   border-radius: 50px;
 }*/
-
-
-
-
-
 </style>

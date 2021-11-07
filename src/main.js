@@ -8,7 +8,8 @@ let data = {
   parks: [],
   currParkCode: '',
   isLoaded: false,
-  currPark: null
+  currPark: null,
+  images: []
 }
 
 new Vue({

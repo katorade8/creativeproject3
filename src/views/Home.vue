@@ -41,10 +41,7 @@ export default {
 }
 </script>
 
-
-
 <style scoped>
-
 .form-container {
   justify-content: center;
   width: 100%
@@ -55,9 +52,4 @@ export default {
   height: 40px;
   font-size: 30px;
 }
-
-
-
-
-
 </style>
