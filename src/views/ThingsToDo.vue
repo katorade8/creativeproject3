@@ -2,11 +2,26 @@
 
   <div>
 
-    <h1>Things To Do</h1>
+    <h1>More Info</h1>
 
-    <p>{{this.$root.$data.currPark.fullName}}</p>
+    <h2>{{this.$root.$data.currPark.fullName}}</h2>
 
     <img class='image' :src='this.$root.$data.currPark.images[1].url'/>
+
+    <p>Entrance Fee: {{this.$root.$data.currPark.entranceFees[0].cost}}</p>
+    <p>Description: {{this.$root.$data.currPark.entranceFees[0].description}}</p>
+
+    <br/>
+
+    <h1>Activities</h1>
+    <div>
+    <div class='activity-container'>
+      <span class='activity' v-for='activity in this.$root.$data.currPark.activities' :key='activity.id'>{{activity.name + " / "}}</span>
+    </div>
+    </div>
+
+    <br/>
+
 
 
   </div>
@@ -19,8 +34,19 @@
 export default {
   name: 'ThingsToDo',
 
+  activities: '',
+
 
   //Will probably want to change filter to find parkId, could put a global variable in main.js or import a variable from parklist
+
+  methods: {
+    listActivities() {
+      for (let i = 0; i < 10; ++i) {
+        this.activities += this.$root.$data.currPark.activities[i].name
+        this.activities += " "
+      }
+    },
+  },
 
 
 }
@@ -35,11 +61,28 @@ export default {
   width: 100%
 }
 
+p {
+  font-size: 20px;
+}
+
+
 .form {
   width: 25%;
   height: 40px;
   font-size: 30px;
 }
+
+
+.activity-container {
+  width: 75%;
+  margin: auto;
+}
+
+.activity {
+  font-size: 20px;
+}
+
+
 
 /* INHERIT FROM Parklist non-scope style
 .image {

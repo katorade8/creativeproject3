@@ -11,8 +11,9 @@
         <img class='image' :src='park.images[0].url'/>
       </div>
       <div class='photo-text'>
+        
         <button @click="changePark(park.id); goToActivites()">Activities</button>
-        <p>{{park.id}}</p>
+
       </div>
     </div>
   </div>
