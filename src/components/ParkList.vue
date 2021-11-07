@@ -42,9 +42,9 @@ export default {
 
 <style scoped>
 
-body {
+/*body {
   background: lightsteelblue;
-}
+}*/
 
 .image {
   justify-content: center;
@@ -53,7 +53,7 @@ body {
 }
 
 .photo-text {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 
