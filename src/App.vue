@@ -11,7 +11,7 @@
       <router-view/>
     </div>
     <div class="footer"> 
-      <h2><a href="https://github.com/katorade8/creativeproject3">github</a></h2>
+      <h2><a class="github-link" href="https://github.com/katorade8/creativeproject3">github</a></h2>
     </div>
   </div>
 </template>
@@ -88,6 +88,11 @@ export default {
   bottom: 0;
   width: 98%;
   height: 2.5rem;
+}
+
+.github-link:hover {
+
+  color: #42b983;
 }
 
 @media only screen and (min-width: 600px) {

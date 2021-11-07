@@ -12,8 +12,9 @@
       </div>
       <div class='photo-text'>
         
-        <button @click="changePark(park.id); goToActivites()">Activities</button>
-
+        <button @click="changePark(park.id); goToActivites()">
+          <h4>Activities in {{park.fullName}}</h4>
+        </button>
       </div>
     </div>
   </div>
@@ -52,5 +53,10 @@ export default {
 <style>
 .photo-text {
   margin-bottom: 50px;
+}
+
+button {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 </style>

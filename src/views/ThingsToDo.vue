@@ -18,6 +18,7 @@
     <div class='activity-container'>
       <span class='activity' v-for='activity in this.$root.$data.currPark.activities' :key='activity.id'>{{activity.name + " / "}}</span>
     </div>
+    <br>
     </div>
 
     <br/>
