@@ -3,7 +3,8 @@
     <p>Please select a park to see related photos!</p>
   </div>
   <div v-else>
-    <h1>Viewing Photos for {{this.$root.$data.currPark.fullName}}</h1>
+    <p>Viewing photos for</p>
+    <h1>{{this.$root.$data.currPark.fullName}}</h1>
     <PhotoList :images="images"/>
   </div>
 </template>
@@ -23,12 +24,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-.img {
-  justify-content: center;
-}
-
-
-</style>
