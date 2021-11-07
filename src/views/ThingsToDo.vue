@@ -6,7 +6,7 @@
 
     <p>{{this.$root.$data.currPark.fullName}}</p>
 
-    <img class='image' :src='this.$root.$data.currPark.images[0].url'/>
+    <img class='image' :src='this.$root.$data.currPark.images[1].url'/>
 
 
   </div>
