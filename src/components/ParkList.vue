@@ -12,7 +12,6 @@
         <img class='image' :src='park.images[0].url'/>
       </div>
       <div  class='photo-text'>
-         <!--<router-link to="/ThingsToDo">Activities</router-link>-->
          <button @click='changeCode(park.id)'><router-link to="/ThingsToDo">More Info</router-link></button>
          <p>{{park.id}}</p>
       </div>
@@ -32,7 +31,16 @@ export default {
 
     methods: {
       changeCode(id) {
+
         this.$root.$data.currParkCode = id
+
+        for (let i = 0; i < this.$root.$data.parks.length; ++i) {
+          if (this.$root.$data.parks[i].id === this.$root.$data.currParkCode) {
+            this.$root.$data.currPark = this.$root.$data.parks[i]
+          }
+        }
+
+
       }
     }
 }
