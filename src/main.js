@@ -27,6 +27,7 @@ fetch(url)
 
 let data = {
   parks: tmp,
+  currParkCode: '',
 }
 
 

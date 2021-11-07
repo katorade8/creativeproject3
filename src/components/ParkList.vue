@@ -12,7 +12,9 @@
         <img class='image' :src='park.images[0].url'/>
       </div>
       <div  class='photo-text'>
-         <router-link to="/ThingsToDo">Activities</router-link>
+         <!--<router-link to="/ThingsToDo">Activities</router-link>-->
+         <button @click='changeCode(park.id)'><router-link to="/ThingsToDo">More Info</router-link></button>
+         <p>{{park.id}}</p>
       </div>
     </div>
   </div>
@@ -27,6 +29,12 @@ export default {
     props: {
         parks: Array,
     },
+
+    methods: {
+      changeCode(id) {
+        this.$root.$data.currParkCode = id
+      }
+    }
 }
 
 </script>
