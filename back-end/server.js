@@ -79,7 +79,7 @@ app.get('/api/reviews/:id', async (req, res) => {
   }
 });
 
-app.delete('/api/items/:id', async (req, res) => {
+app.delete('/api/reviews/:id', async (req, res) => {
   try {
     await ReviewPage.deleteOne({
       _id: req.params.id
