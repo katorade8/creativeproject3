@@ -17,12 +17,40 @@ app.use(bodyParser.urlencoded({
 }));
 
 const mongoose = require('mongoose');
+const { application } = require('express');
 
 const reviewSchema = new mongoose.Schema({
-  name: String,
-  content: String,
+  parkName: String,
+  parkIndex: Number,
+  reviews: Array
 })
+
+const Review = mongoose.model('Review', reviewSchema);
 
 mongoose.connect('mongodb://localhost:27017/museum', {
   useNewUrlParser: true
+});
+
+app.post('/api/reviews', async (req, res) => {
+  try {
+    let reviews = await Review.findOne({
+      parkIndex: req.params.parkIndex
+    })
+    res.send(reviews);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.get('/api/reviews', async (req, res) => {
+  try {
+    let reviews = await Review.findOne({
+      parkIndex: req.params.parkIndex
+    })
+    res.send(reviews);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
 });
