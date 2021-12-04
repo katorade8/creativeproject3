@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 
 const mongoose = require('mongoose');
 
-const reviewSchema = new mongoose.Schema({
+const reviewPageSchema = new mongoose.Schema({
   parkName: String,
   park_id: String,
   reviews: [{
@@ -28,24 +28,42 @@ const reviewSchema = new mongoose.Schema({
   }]
 }); 
 
-const Review = mongoose.model('Review', reviewSchema);
+const ReviewPage = mongoose.model('ReviewPage', reviewPageSchema);
 
 mongoose.connect('mongodb://localhost:27017/museum', {
   useNewUrlParser: true
 });
 
 app.post('/api/reviews', async (req, res) => {
+  var valid;
   try {
-    await Review.findByIdAndUpdate(
+    valid = await ReviewPage.findByIdAndUpdate(
       req.params.park_id, 
       {parkName: req.body.parkName},
-      {$push: {"review": {contents: req.body.contents, stars: req.body.stars, person: req.body.person}}},
+      {$push: {"reviews": {contents: req.body.contents, stars: req.body.stars, person: req.body.person}}},
       {upsert: true, new: true}
     )
   } catch (error) {
     console.log(error);
     res.sendStatus(500);
   }
+  if (valid == null) { //gotta make a new Review Object
+    const reviewPage = new ReviewPage({
+      parkName: req.body.parkName,
+      park_id: req.body.park_id,
+      reviews: []
+    });
+    review = {contents: req.body.contents, stars: req.body.stars, person: req.body.person};
+    reviews.push(review);
+    try {
+      await reviewPage.save();
+      res.send(reviewPage);
+    } catch (error) {
+      console.log(error);
+      res.sendStatus(500);
+    }
+  }
+  
 });
 
 app.get('/api/reviews', async (req, res) => {
