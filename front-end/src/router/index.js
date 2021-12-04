@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ThingsToDo from '../views/ThingsToDo.vue'
 import Photo from '../views/Photo.vue'
+import Reviews from '../views/Reviews.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/ThingsToDo',
     name: 'ThingsToDo',
     component: ThingsToDo
+  },
+  {
+    path: '/Reviews',
+    name: 'Reviews',
+    component: Reviews
   },
 
 ]
