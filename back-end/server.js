@@ -34,6 +34,8 @@ mongoose.connect('mongodb://localhost:27017/museum', {
   useNewUrlParser: true
 });
 
+//creates new and updates, 
+//...don't have to keep track of whether something has been created or not in Reviews.vue
 app.post('/api/reviews', async (req, res) => {
   var valid;
   try {
@@ -63,15 +65,26 @@ app.post('/api/reviews', async (req, res) => {
       res.sendStatus(500);
     }
   }
-  
 });
 
-app.get('/api/reviews', async (req, res) => {
+app.get('/api/reviews/:id', async (req, res) => {
   try {
     let reviews = await Review.findOne({
-      parkIndex: req.params.parkIndex
+      park_id: req.body.park_id
     })
     res.send(reviews);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.delete('/api/items/:id', async (req, res) => {
+  try {
+    await ReviewPage.deleteOne({
+      _id: req.params.id
+    });
+    res.sendStatus(200);
   } catch (error) {
     console.log(error);
     res.sendStatus(500);
