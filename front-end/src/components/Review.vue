@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h4>{{person}}'s Review</h4>
-
     <div class='reviewContainer'>
       <div class='reviewBox'>
         <p>Test</p>
@@ -18,17 +16,23 @@
 <script>
 export default {
 
-  name: 'John',
-
+  name: 'Review',
+/*
   data() {
     return {
       review: {
         content: 'It sucked',
         stars: 0,
-        person: 'John',
+        person: 'Tony',
 
       }
     }
+  },
+*/
+  props: {
+    content: String,
+    stars: Number,
+    person: String,
   },
 
   methods: {

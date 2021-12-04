@@ -5,12 +5,16 @@
     <h5>Add Review</h5>
 
     <div class='reviewContainer'>
-      <form><input class='newComment' type='text' placeholder="New Comment" v-model='newComment'/></form>
+      <form>
+        <input class='newComment' type='text' placeholder="New Comment" v-model='newComment'/>
+        <input type='submit'/>
+      </form>
     </div>
 
-    <p>New Comment is: {{newComment}}</p>  <!--Testing just ot see if newComment is update-->
+    <p>Testing - New Comment is: {{newComment}}</p>  <!--Testing just ot see if newComment is update-->
 
     <Reviews/>
+
 
 
 
@@ -31,6 +35,7 @@ export default {
   data() {
     return {
       newComment: '',
+      person: 'John',
     }
   },
 
@@ -38,6 +43,7 @@ export default {
   components: {
     Reviews,
   },
+
 
   methods: {
     
