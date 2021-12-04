@@ -2,13 +2,19 @@
   <div>
     <h1>Reviews</h1>
 
+    <h5>Add Review</h5>
+    
+    <div class='reviewContainer'>
+
+      <form><input type='text' placeholder="New Comment" v-model='newComment'/></form>
+    </div>
+
     <Reviews/>
 
-    <div class='reviewContainer'>
-      <div class='reviewBox'>
-        <p>Test</p>
-      </div>
-    </div>
+
+
+
+
 
   </div>
 
@@ -23,6 +29,13 @@
 import Reviews from '../components/Reviews.vue'
 
 export default {
+
+  data() {
+    return {
+      newComment: '',
+    }
+  },
+
 
   components: {
     Reviews,
@@ -52,7 +65,8 @@ export default {
 
   background-color: lightblue;
 
-  width: 50%
+  width: 50%;
 }
+
 
 </style>

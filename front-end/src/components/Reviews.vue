@@ -1,6 +1,13 @@
 <template>
   <div>
-    <h2>Component Review Data</h2>
+    <h4>{{}}'s Review</h4>
+
+    <div class='reviewContainer'>
+      <div class='reviewBox'>
+        <p>Test</p>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -14,9 +21,9 @@ export default {
   data() {
     return {
       review: {
-        content: '',
+        content: 'It sucked',
         stars: 0,
-        person: '',
+        person: 'John',
 
       }
     }
@@ -25,6 +32,8 @@ export default {
   methods: {
 
   },
+
+
 }
 </script>
 
@@ -36,6 +45,20 @@ export default {
 
 
 <style scoped>
+
+.reviewContainer {
+  display: flex;
+  justify-content: center;
+}
+
+
+.reviewBox {
+  display: flex;
+
+  background-color: lightblue;
+
+  width: 50%;
+}
 
 
 </style>
