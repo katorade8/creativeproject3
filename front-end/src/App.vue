@@ -5,7 +5,8 @@
         <h2>
           <router-link to="/">Home</router-link> |
           <router-link to="/photo">Photos</router-link> |
-          <router-link to="/ThingsToDo">Activities</router-link>
+          <router-link to="/ThingsToDo">Activities</router-link> |
+          <router-link to="/Reviews">Reviews</router-link>
         </h2> 
       </div>
       <router-view/>

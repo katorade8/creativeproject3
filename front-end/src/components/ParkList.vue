@@ -16,6 +16,9 @@
         <button @click="changePark(park.id); goToPage('/photo')">
           <h4>Photos of {{park.fullName}}</h4>
         </button>
+        <button @click="changePark(park.id); goToPage('/Reviews')">
+          <h4>Reviews of {{park.fullName}}</h4>
+        </button>
       </div>
     </div>
   </div>
