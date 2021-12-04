@@ -2,7 +2,7 @@
   <div>
     <div class='reviewContainer'>
       <div class='reviewBox'>
-        <p>Test</p>
+        <p>{{content}}</p>
       </div>
     </div>
 
@@ -29,10 +29,11 @@ export default {
     }
   },
 */
+
   props: {
-    content: String,
     stars: Number,
     person: String,
+    reviews: Object,
   },
 
   methods: {
