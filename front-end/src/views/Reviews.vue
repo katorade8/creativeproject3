@@ -3,16 +3,14 @@
     <h1>Reviews</h1>
 
     <h5>Add Review</h5>
-    
-    <div class='reviewContainer'>
 
-      <form><input type='text' placeholder="New Comment" v-model='newComment'/></form>
+    <div class='reviewContainer'>
+      <form><input class='newComment' type='text' placeholder="New Comment" v-model='newComment'/></form>
     </div>
 
+    <p>New Comment is: {{newComment}}</p>  <!--Testing just ot see if newComment is update-->
+
     <Reviews/>
-
-
-
 
 
 
@@ -26,7 +24,7 @@
 
 
 <script>
-import Reviews from '../components/Reviews.vue'
+import Reviews from '../components/Review.vue'
 
 export default {
 
@@ -40,6 +38,10 @@ export default {
   components: {
     Reviews,
   },
+
+  methods: {
+    
+  }
 
 }
 
@@ -66,6 +68,12 @@ export default {
   background-color: lightblue;
 
   width: 50%;
+}
+
+.newComment {
+  
+  height: 30px;
+  width: 100%;
 }
 
 
