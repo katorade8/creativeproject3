@@ -31,7 +31,7 @@
 export default {
   name: 'ParkList',
   props: {
-    parks: Array,
+    parks: Array
   },
   methods: {
     changePark(id) {

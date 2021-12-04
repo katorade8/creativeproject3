@@ -29,7 +29,6 @@ const routes = [
     name: 'Reviews',
     component: Reviews
   },
-
 ]
 
 const router = new VueRouter({
