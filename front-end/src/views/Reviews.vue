@@ -9,32 +9,38 @@
       </form>
     </div>
     <p>Testing - New Comment is: {{newComment}}</p>  <!--Testing just ot see if newComment is update-->
-    <Review :reviews="reviews"/>
+    <!--<Review :reviews="reviews" :person="person"/>-->
+    <Review :person='person' :stars='stars'/>
+    
   </div>
 </template>
 
 
 <script>
 import Review from '../components/Review.vue'
-import axios from 'axios'
+//import axios from 'axios'
 
 export default {
   data() {
     return {
       newComment: '',
       person: 'John',
+      stars: 0,
+      
     }
   },
   name: 'Reviews',
   components: {
     Review
   },
+  /*
   computed: {
     reviews() { //fetch reviews for current park from database
       let reviews = axios.get("api/reviews/" + this.$root.$data.currPark);
       return reviews;
     }
   },
+  */
 }
 </script>
 

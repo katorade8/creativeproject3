@@ -1,10 +1,25 @@
 <template>
   <div>
-    <div class='reviewContainer'>
-      <div class='reviewBox'>
-        <p>{{content}}</p>
+  
+<!--  Actual For Loop for going through all reviews
+    <div v-for='review in reviews' :key='review.name'>
+      <div class='reviewContainer'>
+        <div class='reviewBox'>
+          <p>{{FIXME}}</p>
+        </div>
       </div>
     </div>
+-->
+
+<!--Testing-->
+    <div class='reviewContainer'>
+      <div class='reviewBox'>
+          <p>{{person}}'s Review</p>
+          <span>Stars: {{stars}}</span>
+
+      </div>
+    </div>
+
 
   </div>
 </template>
@@ -17,18 +32,6 @@
 export default {
 
   name: 'Review',
-/*
-  data() {
-    return {
-      review: {
-        content: 'It sucked',
-        stars: 0,
-        person: 'Tony',
-
-      }
-    }
-  },
-*/
 
   props: {
     stars: Number,
@@ -63,6 +66,8 @@ export default {
   display: flex;
 
   background-color: lightblue;
+
+  flex-direction: column;
 
   width: 50%;
 }
